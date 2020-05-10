@@ -1,4 +1,4 @@
-#+TITLE:
-* Project Number 5
-Calculator stuff, base 10.
-Waiting for planning...
+#+Assembly calculator:
+* Features
+A simple base 10 calculator, capable of integer and floating
+point arithmetic commands.
