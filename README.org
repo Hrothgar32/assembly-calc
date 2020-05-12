@@ -1,0 +1,41 @@
+#+TITLE: Assembly calculator
+* Features
+A simple base 10 calculator, capable of integer and floating
+point arithmetic commands, using the masm assembler by Microsoft.
+* Implementation
+** Stack
+As the calculator should be capable of evaluating a complex mathematical expression,
+the straightforward way would be to use the stack, pushing values to it.
+** C functions
+In order to avoid reinventing the wheel, I will use several helping functions from the
+mscvrt library.
+*** Strlen
+Because the order of the operations and the operands might be important,
+I will be using strlen to calculate the lenght of the string, and put in the
+all the operands into the stack in opposite order.
+*** Printf
+This will be used in order to avoid having to use system calls.
+*** Scanf
+This will be used in order to avoid having to use system calls.
+*** Strcmp
+I will use this function to compare the "exit" word with user input.
+*** Isdigit
+This function helps me determine the true nature of an operand.
+** Groups of three
+As division and multiplication are prioritezed, I have to come up with a solution for separating
+the operands into groups of three around these prioritezed operations.
+*** The types of groups are as follows:
+ 1. *+1* -- It starts with an arithmetic sign. In this case, I'd be advised
+    to perform the operation, and then return the result to the top of the stack.
+    #+BEGIN_SRC asm export: code
+    .data
+    first_operand dd 0
+    second_operand dd 0
+    third_operand dd 0
+    input_string db "+1", 0
+
+    .code
+    ...
+    #+END_SRC
+ 2. *3*2* -- Another straighforward operation. I read in the three operands,
+    perform the operation, and then return the result to the top of the stack.
