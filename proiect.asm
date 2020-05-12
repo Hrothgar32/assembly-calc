@@ -12,9 +12,9 @@
     .data
     greeting_message db "Introduceti o expresie ", 0
     format_string db "%s",0
-    user_input_string db 0
     exit_string db "exit", 0
     inital_variable dd 0
+    user_input_string db 0
 
 
 .code
