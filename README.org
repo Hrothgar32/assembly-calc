@@ -1,7 +1,10 @@
 #+TITLE: Assembly calculator
 * Features
-A simple base 10 calculator, capable of integer and floating
-point arithmetic commands, using the masm assembler by Microsoft.
+A simple base 10 calculator, capable of integer
+arithmetic commands, using the masm assembler by Microsoft.
+The calculator displays a greeting message to tell the user to give input,
+it continues to do so until the user writes "exit" after which the program
+halts.
 * Implementation
 ** Stack
 As the calculator should be capable of evaluating a complex mathematical expression,
